@@ -40,6 +40,7 @@ namespace YoketoruVS2021
             this.clearLabel = new System.Windows.Forms.Label();
             this.titleButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -146,12 +147,22 @@ namespace YoketoruVS2021
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 12);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "★";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(648, 389);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.titleButton);
             this.Controls.Add(this.clearLabel);
             this.Controls.Add(this.GameOcerLabel);
@@ -181,6 +192,7 @@ namespace YoketoruVS2021
         private System.Windows.Forms.Label clearLabel;
         private System.Windows.Forms.Button titleButton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
