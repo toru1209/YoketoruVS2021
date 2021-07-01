@@ -37,7 +37,7 @@ namespace YoketoruVS2021
             this.label4 = new System.Windows.Forms.Label();
             this.hiLabel = new System.Windows.Forms.Label();
             this.GameOcerLabel = new System.Windows.Forms.Label();
-            this.CLEARLabel = new System.Windows.Forms.Label();
+            this.clearLabel = new System.Windows.Forms.Label();
             this.titleButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
@@ -111,34 +111,35 @@ namespace YoketoruVS2021
             this.GameOcerLabel.AutoSize = true;
             this.GameOcerLabel.Font = new System.Drawing.Font("MS UI Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.GameOcerLabel.ForeColor = System.Drawing.Color.Purple;
-            this.GameOcerLabel.Location = new System.Drawing.Point(7, 124);
+            this.GameOcerLabel.Location = new System.Drawing.Point(207, 127);
             this.GameOcerLabel.Name = "GameOcerLabel";
             this.GameOcerLabel.Size = new System.Drawing.Size(194, 40);
             this.GameOcerLabel.TabIndex = 6;
             this.GameOcerLabel.Text = "GameOcer";
             // 
-            // CLEARLabel
+            // clearLabel
             // 
-            this.CLEARLabel.AutoSize = true;
-            this.CLEARLabel.Font = new System.Drawing.Font("MS UI Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CLEARLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CLEARLabel.Location = new System.Drawing.Point(22, 154);
-            this.CLEARLabel.Name = "CLEARLabel";
-            this.CLEARLabel.Size = new System.Drawing.Size(148, 40);
-            this.CLEARLabel.TabIndex = 7;
-            this.CLEARLabel.Text = "CLEAR!";
+            this.clearLabel.AutoSize = true;
+            this.clearLabel.Font = new System.Drawing.Font("MS UI Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.clearLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.clearLabel.Location = new System.Drawing.Point(238, 127);
+            this.clearLabel.Name = "clearLabel";
+            this.clearLabel.Size = new System.Drawing.Size(148, 40);
+            this.clearLabel.TabIndex = 7;
+            this.clearLabel.Text = "CLEAR!";
             // 
             // titleButton
             // 
             this.titleButton.BackColor = System.Drawing.Color.Lime;
             this.titleButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.titleButton.Font = new System.Drawing.Font("MS UI Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.titleButton.Location = new System.Drawing.Point(89, 205);
+            this.titleButton.Location = new System.Drawing.Point(198, 206);
             this.titleButton.Name = "titleButton";
             this.titleButton.Size = new System.Drawing.Size(234, 101);
             this.titleButton.TabIndex = 8;
             this.titleButton.Text = "タイトルへ";
             this.titleButton.UseVisualStyleBackColor = false;
+            this.titleButton.Click += new System.EventHandler(this.titleButton_Click);
             // 
             // timer1
             // 
@@ -150,9 +151,9 @@ namespace YoketoruVS2021
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(550, 318);
+            this.ClientSize = new System.Drawing.Size(648, 389);
             this.Controls.Add(this.titleButton);
-            this.Controls.Add(this.CLEARLabel);
+            this.Controls.Add(this.clearLabel);
             this.Controls.Add(this.GameOcerLabel);
             this.Controls.Add(this.hiLabel);
             this.Controls.Add(this.label4);
@@ -177,7 +178,7 @@ namespace YoketoruVS2021
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label hiLabel;
         private System.Windows.Forms.Label GameOcerLabel;
-        private System.Windows.Forms.Label CLEARLabel;
+        private System.Windows.Forms.Label clearLabel;
         private System.Windows.Forms.Button titleButton;
         private System.Windows.Forms.Timer timer1;
     }

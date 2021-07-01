@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace YoketoruVS2021
 {
     public partial class Form1 : Form
     {
+        const bool isDebeg = true;
+
 
         enum State
         {
@@ -24,6 +27,8 @@ namespace YoketoruVS2021
         State currentState = State.None;
         State nextState = State.Title;
 
+        [DllImport("user32.dll")]
+        public static extern short GetAsyncKeyState(int vKey);
 
         public Form1()
         {
@@ -32,6 +37,18 @@ namespace YoketoruVS2021
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (isDebeg)
+            {
+                if (GetAsyncKeyState((int)Keys.O) <0)
+                {
+                    nextState = State.Gameover;
+                }
+                else if (GetAsyncKeyState((int)Keys.C)<0)
+                        {
+                    nextState = State.Clear;
+                }
+            }
+
             if (nextState != State.None)
             {
                 initProc();
@@ -40,8 +57,8 @@ namespace YoketoruVS2021
 
         void initProc()
         {
-            State currentState = State.None;
-            State nextState = State.Title;
+            currentState = nextState;
+            nextState = State.None;
 
             switch (currentState)
             {
@@ -52,7 +69,7 @@ namespace YoketoruVS2021
                     hiLabel.Visible = true;
                     GameOcerLabel.Visible = false;
                     titleButton.Visible = false;
-                    CLEARLabel.Visible = false;
+                    clearLabel.Visible = false;
                     break;
 
                 case State.Game:
@@ -61,12 +78,29 @@ namespace YoketoruVS2021
                     copyrightLabel.Visible = false;
                     hiLabel.Visible = false;
                     break;
+
+                case State.Gameover:
+                    //MessageBox.Show("GameOver");
+                    GameOcerLabel.Visible = true;
+                    titleButton.Visible = true;
+                    break;
+
+                case State.Clear:
+                    // MessageBox.Show("Clear");
+                    clearLabel.Visible = true;
+                    titleButton.Visible = true;
+                    break;
             }
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
             nextState = State.Game;
+        }
+
+        private void titleButton_Click(object sender, EventArgs e)
+        {
+            nextState = State.Title;
         }
     }
 }
